@@ -1,14 +1,20 @@
 import java.awt.*;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.util.Queue;
 import java.util.*;
 
 public class RainbowRoads {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         HashMap<Integer, HashMap<Integer, Integer>> allStations = new HashMap<>();
         HashMap<Integer, Boolean> rejectedStations = new HashMap<>();
         Queue<Point> stationsQueue = new LinkedList<>();
 
-        Kattio scan = new Kattio(System.in);
+        File file = new File("src/main/resources/rainbowroads-0001.in");
+        Kattio scan = new Kattio(new FileInputStream(file));
+
+//        Kattio scan = new Kattio(System.in);
 
         int stationsAmount = scan.getInt();
 
